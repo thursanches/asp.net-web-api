@@ -53,7 +53,7 @@ public class BooksController : ControllerBase
         };
 
         // **Correction:** Use the correct route name ("GetBookById")
-        return CreatedAtRoute("GetBookById", new { id = generatedId }, response);
+        return CreatedAtRoute("", new { id = generatedId }, response);
     }
 
 
@@ -87,7 +87,6 @@ public class BooksController : ControllerBase
             return NotFound("Esse livro não existe");
         }
 
-        book.Id = request.Id;
         book.Title = request.Title;
         book.Author = request.Author;
         book.Genre = request.Genre;
